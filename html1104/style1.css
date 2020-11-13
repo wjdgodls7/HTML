@@ -1,0 +1,16 @@
+h1{
+    font-size : 25px;
+    color : burlywood;
+    border : groove 4px pink;
+    /* dotted, dashed, solid(한줄), double(두줄), hidden
+       groove, ridge, inset, outset, non */
+}
+p{
+    font-size : 50px;
+    color :rgb(199, 31, 241);
+    font-weight :900;
+}
+body{
+    background-color: rgb(251, 255, 0);
+    color :rgb(245, 225, 225);
+}
