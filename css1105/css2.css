@@ -1,0 +1,14 @@
+ul,ol{
+    color: violet;
+}
+ul>li{
+    color: purple;
+}
+#ol2 li{
+    color: salmon;
+}
+.ol1 li{
+    color: royalblue;
+}
+/* 태그<클래스<아이디 순으로 우선순위가 정해짐 */
+/* 직접 스타일을 지정해주는 것이 제일 우선순위가 높음 */

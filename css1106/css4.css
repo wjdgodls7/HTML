@@ -1,0 +1,19 @@
+a:link{
+    color: crimson;
+    text-decoration: none;
+}
+
+a:visited{
+    color: grey;
+}
+a:hover{
+    color: blue;
+text-decoration: underline;
+
+}
+
+a:active{ /*클릭 하고 있을시*/
+    color: brown;
+    text-decoration: none;
+
+}

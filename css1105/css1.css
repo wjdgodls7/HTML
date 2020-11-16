@@ -1,0 +1,15 @@
+table,
+td,
+tr {
+    border: 1px blue solid;
+    border-collapse: collapse;
+}
+input{
+background-color: grey;
+}
+input:focus{
+background-color: powderblue;
+}
+input:hover{
+    background-color: purple;
+}

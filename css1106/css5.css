@@ -1,0 +1,15 @@
+body{
+    color: red;
+}
+h1{
+    color: blue;
+}
+h2{
+    color: orange;
+}
+.ex{
+    color: black;
+}
+p.ex{
+    color: green;
+}
