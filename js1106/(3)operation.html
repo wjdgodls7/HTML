@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Operation</title>
+</head>
+
+<body>
+</body>
+<script>
+    /*
+    (1)연산자의 종류
+     +,-,*,/,%.++,--
+    
+    (2)자바스크립트에 내장된 함수
+    Math.sqrt(z) : z에 대한 루트값
+    Math.abs(y-x) : y에서 x를 뺀 값의 절대값
+    z.tofixed(2) : z를 소숫점 2자리까지만 표현
+    parseInt(y) : y를 소숫점 버리고 정수로 출력
+    
+    (3)삼항연산자 => (조건식)? 참:거짓
+     */
+    var x = 3;
+    var y = 1.5;
+    var z = x * y;
+
+    console.log(x);
+    console.log(y);
+    console.log(z);
+
+    console.log("5%3 : " + 5 % 3);
+    console.log("parseInt(y) : " + parseInt(y));
+    console.log("Math.sqrt(z) : " + Math.sqrt(z));
+    console.log("Math.abs(y-x)" + Math.abs(y - x));
+    console.log("z.toFixed(2) : " + z.toFixed(2));
+
+    var now = new Date();
+    console.log(now);
+    document.write(now);
+
+    var ampm = now.getHours() < 12 ? "오전" : "오후"
+    var hour = now.getHours();
+    var min = (now.getMinutes()).length == 1 ? ("0"+now.getMinutes()) : now.getMinutes()
+
+    console.log(ampm);
+
+    document.write("<br/>" + "지금은 " + ampm + " " + + hour + "시 " + min + "분 " + "입니다");
+// Date나 now나 둘다 사용 가능
+    function formatDate(now){
+        var year = now.getFullYear();
+        var month = (now.getMonth()+1) < 10 ? "0"+now.getMonth()+1 : now.getMonth()+1;
+        var day = now.getDate() < 10 ? "0"+now.getDate() : now.getDate();
+        var ampm = now.getHours() < 12 ? "오전" : "오후"
+        var hour = now.getHours() < 12 ? now.getHours() : now.getHours()-12;
+        var hour1 = hour< 10 ? "0"+hour : hour;
+        var min = now.getMinutes() < 10 ? "0"+now.getMinutes() : now.getMinutes();
+        var sec = now.getSeconds() < 10 ? "0"+now.getSeconds() : now.getSeconds();
+
+        return year + "-" + month + "-" + day + " " + ampm + hour1 + ":" + min + ":" + sec;
+    }
+    var nowdate = formatDate();
+    document.write("</br>"+nowdate);
+
+</script>
+
+</html>
