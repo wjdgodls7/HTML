@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>break & continue</title>
+</head>
+
+<body>
+    <h2>BREAK</h2>
+    <p id="break1"></p>
+
+    <br />
+
+    <h2>CONTINUE</h2>
+    <p id="continue1"></p>
+
+</body>
+<script>
+    var text1 = ""
+    var text2 = ""
+
+    for (i = 1; i < 11; i++) {
+        if (i == 6) {
+            break;
+        }
+        text1 += "The number is " + i + "<br/>";
+    }
+    console.log(text1);
+    document.getElementById("break1").innerHTML = text1;
+
+    for (i = 1; i < 11; i++) {
+        if (i % 3 == 0) {
+            continue; //pass 건너뛰다
+        }
+        text2 += "The number is " + i + "<br/>";
+    }
+    document.getElementById("continue1").innerHTML = text2;
+
+</script>
+</html>
+

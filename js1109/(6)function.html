@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>function(함수)</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>
+            계산기만들기
+        </legend>
+        첫번째 숫자 : <input type="text" id="a1"><br />
+        두번째 숫자 : <input type="text" id="b1"><br />
+
+        <input type="button" value="sum" onclick="sum()">
+        <input type="button" value="minus" onclick="minus()">
+        <input type="button" value="product" onclick="product()">
+        <input type="button" value="divide" onclick="divide()">
+
+        <h1>결과 : <span id="ans"></span></h1>
+    </fieldset>
+</body>
+<script>
+    var a;
+    var b;
+
+    //document.getElemntById("a1").value 는 문자형
+    function insert() {
+        a = parseFloat(document.getElementById("a1").value);
+        b = parseFloat(document.getElementById("b1").value);
+    }
+
+    function sum() {
+        insert();
+        result = a+b;
+        document.getElementById("ans").innerHTML =result;
+    }
+
+    function minus() {
+        insert();
+        result = a-b;
+        document.getElementById("ans").innerHTML =result;
+    }
+
+    function product() {
+        insert();
+        result = a*b;
+        document.getElementById("ans").innerHTML = result;
+    }
+    function divide() {
+        insert();
+        result = a/b;
+        var result1 = "다시입력하세요";
+        if(b==0){
+            document.getElementById("ans").innerHTML = result1;
+        }else{
+        
+        document.getElementById("ans").innerHTML =result;
+    }
+        
+    }
+    
+</script>
+</html>

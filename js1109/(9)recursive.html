@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>재귀호출</title>
+</head>
+
+<body>
+    <h2>재귀호출 : 함수 안에서 자신을 다시 호출하는 것</h2>
+    <!-- 4 x 3 x 2 x 1 = 4! -->
+    <!-- factorial -->
+
+    <fieldset>
+        <legend>
+            factorial함수
+        </legend>
+        <input type="text" id="fact">
+        <input type="button" value="factorial!" onclick="factmethod()">
+        <h2>입력한 값 : <span id="result1"></span></h2>
+        <h2>결과 값 : <span id="result2"></span></h2>
+        <img id="img2" src="" >
+    </fieldset>
+</body>
+<script>
+    var result = 1;
+    function factorial(num) {
+        if (num == 0) {
+            return result;
+        }
+        else {
+            result = result * num;
+            num--;
+        }
+        return factorial(num);
+    }
+    //Q.num값을 입력받아 factirial 함수를 완성해보시오.
+
+    function factmethod() {
+        aaa = parseInt(document.getElementById("fact").value);
+        //var result를 해버리면 결과값 출력하는 result가 1로 덮어저 버림
+        result = 1;
+
+        factorial(aaa);
+        
+        document.getElementById("result1").innerHTML = aaa;
+
+        document.getElementById("result2").innerHTML = result;
+        img1();
+    }
+
+    function img1(){
+        document.getElementById("img2").src="다운로드 (3).jpg";
+
+    }
+</script>
+
+</html>
