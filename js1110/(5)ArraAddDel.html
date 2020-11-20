@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>배열 추가 삭제</title>
+</head>
+
+<body>
+    <input type="text" id="txt"><br />
+    <button onclick="arrPush()">push</button>
+    <button onclick="arrPop()">pop</button>
+    <button onclick="arrUnShift()">unshift</button>
+    <button onclick="arrShift()">shift</button>
+    <button onclick="arrSplice()">splice</button>
+</body>
+<script>
+    var arrNum = [];
+    var i = 0;
+    // for (i = 0; i < 5; i++) {
+    //     arrNum[i] = i + 1;
+    // }
+    arrNum=[1,2,3,4,1];
+    //push함수를 이용해서 배열의 뒤에 값을 추가
+    function arrPush() {
+        arrNum.push(i + 1);
+        i++;
+        console.log(arrNum);
+    }
+
+    function arrPop() {
+        //Pop함수를 사용하여 뒤의 값을 제거
+        arrNum.pop();
+        console.log(arrNum);
+    }
+    //unshift 함수를 이용해서 배열의 앞에 값 추가
+    function arrUnShift() {
+        arrNum.unshift(i + 1);
+        i++;
+        console.log(arrNum);
+    }
+    //shift 함수를 이용해서 배열의 앞에 값 삭제
+    function arrShift() {
+        arrNum.shift();
+        console.log(arrNum);
+    }
+    //splice함수를 이용해서 특정 배열의 값을 삭제
+    function arrSplice() {
+        var txt1 = document.getElementById("txt").value;
+        var txt2 = parseInt(txt1);
+        var index = arrNum.indexOf(txt2);
+        //indexof() : 주어진 값의 해당하는 인덱스 번호
+        //배열에 값이 없을 경우 -1이 된다.
+        console.log("test");
+        console.log(arrNum.indexOf(txt2));
+
+        if (index > -1) {
+            //splice(index(번호) , 배열갯수)
+            arrNum.splice(index, 2);
+            console.log(arrNum);
+        } else { alert('입력한 값이 없습니다.') }
+
+
+    }
+
+
+
+
+
+</script>
+
+</html>

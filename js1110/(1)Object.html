@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>객체(Object)</title>
+</head>
+
+<body>
+    <h2>Person Object</h2>
+    <h3 id="person1"></h3>
+    <hr />
+
+    <h2>car Object</h2>
+    <h3 id="car1"></h3>
+</body>
+<script>
+    // var arr = []; 배열 선언 방법
+    //오브젝트 선언 방법
+    var object1 = {};
+    var object2 = new Object();
+
+    var person = {
+        name: "정해인",
+        phone: "010-6495-4216",
+        addr: "인천시 계양구"
+    };
+    console.log(person);
+    document.getElementById("person1").innerHTML = person.name + "," + person.phone + "," + person.addr;
+
+    var car = new Object();
+    car["name"] = "제네시스g80";
+    car["company"] = "제네시스";
+    car["type"] = "디젤";
+    car["color"] = "검정";
+
+    // car[0] = "제네시스g80";
+    // car[1] = "제네시스";
+    // car[2] = "디젤";
+    // car[3] = "검정";
+
+    console.log(car);
+
+    //document.getElementById("car1").innerHTML = car["name"];
+    var text = "";
+    for (var i in car) {
+        text += i+":"+car[i]+"<br/>";   
+        // document.getElementById("car1").innerHTML = i+":"+car[i];
+    }
+    document.getElementById("car1").innerHTML = text;
+</script>
+</html>

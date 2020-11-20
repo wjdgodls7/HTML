@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>로또 당첨!</title>
+</head>
+<style>
+    fieldset {
+        width: 100px;
+        margin: auto;
+    }
+
+    .lotto {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin: auto;
+        border: 1px black solid;
+        float: left;
+    }
+</style>
+
+<body>
+    <fieldset>
+        <legend>번호 생성기</legend>
+        <div class="lotto"></div>
+        <div class="lotto"></div>
+        <div class="lotto"></div>
+        <div class="lotto"></div>
+        <div class="lotto"></div>
+        <div class="lotto"></div>
+        <input type="button" value="번호생성" id="create">
+    </fieldset>
+</body>
+
+<script>
+    var lotto = [0, 0, 0, 0, 0, 0];
+    var i = 0;
+
+    var btn = document.getElementById("create");
+    var number = document.getElementsByClassName("lotto");
+
+    btn.addEventListener("click", result1);
+
+    function result1() {
+        if (i > 5) {
+            alert("더이상 넣을 수 없습니다.")
+        } else {
+            lotto[i] = randomLotto(1, 45);
+            number[i].innerHTML = lotto[i];
+            i++;
+        }
+    }
+    function randomLotto(a,b){
+        var ran = Math.floor(Math.random() * b + a);
+        
+        //(max-min+1) => 까지
+        // Math.random() : 0.000 ~ 0.999
+        // Math.floor() : 소숫점 버림
+        // round : 반올림, ceil : 올림
+
+        //중복 제거
+        for(var j in lotto){
+            if(lotto[j]==ran){
+                return randomLotto(a,b);
+            }     
+        }
+        return ran;
+    }
+
+</script>
+
+</html>

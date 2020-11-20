@@ -1,0 +1,15 @@
+fieldset{
+    background-color: burlywood;
+    margin: auto;
+    width: 300px;
+}
+legend{
+    font-family: cursive;
+}
+h2{
+    font-family: cursive;
+}
+
+input{
+    font-family: cursive;
+}

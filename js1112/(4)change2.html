@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>이미지 변경</title>
+</head>
+
+<body>
+    <button id="btn1">텍스트표시(innerHTML)</button>
+    <button id="btn2">텍스트표시(write)</button>
+    <button id="btn3">이미지 변경</button>
+    <h1 id="elem"></h1>
+    <img id="image" src="다운로드 (3).jpg" alt="삼색이" width="200px">
+</body>
+
+<script>
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    var btn3 = document.getElementById("btn3");
+    var elem = document.getElementById("elem");
+    var img = document.getElementById("image");
+
+    btn1.addEventListener("click", btn11);
+    btn2.addEventListener("click", btn22);
+    btn3.addEventListener("click", btn33);
+    function btn11() {
+        document.getElementById("elem").innerHTML = "innerHTML 등장!"
+    }
+
+    function btn22() {
+        document.write("ㅁㄴㄹㄴㅇ")
+    }
+    var i = 0
+    function btn33() {
+        if (i == 0) {
+            image.src = "다운로드 (2).jpg";
+            i++
+        } else if (i == 1) {
+            imgage.src = "";
+            i++;
+        } else {
+            image.src = "다운로드 (3).jpg";
+            i = 0;
+        }
+    }
+
+
+</script>
+
+</html>

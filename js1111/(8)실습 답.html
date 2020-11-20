@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>실습 답</title>
+    <style>
+        #count {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><span id="count"></span>초 후 페이지가 이동됩니다.</h1>
+    <h1><span id="count1"></span>초 후 페이지가 이동됩니다.</h1>
+</body>
+<script>
+    var a = 5;
+    var msg = document.getElementById("count");
+    var b = 0;
+    
+    setInterval(function () {
+        a--;
+        count.innerHTML = a;
+    }, 1000);
+
+    setTimeout(function () {
+        alert("페이지가 이동합니다.");
+        location.href = "http://www.naver.com";
+    }, 5000)
+
+    setInterval(function () {
+        b++;
+        count1.innerHTML = b;
+    }, 1000)
+
+</script>
+
+</html>

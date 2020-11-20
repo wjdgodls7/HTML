@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>이벤트</title>
+
+    <style>
+        div {
+            width: 250px;
+            height: 250px;
+            background-color: mintcream;
+            text-align: center;
+            line-height: 250px;
+        }
+    </style>
+
+</head>
+
+<body onload="alert('로딩중')">
+
+    <div id="div1" onmouseover="mouseEvent('over')" onmouseout="mouseEvent('out')"><br />
+
+    </div>
+    <fieldset>
+        <legend>고기 종류</legend>
+        <select id="sele" onchange="sel()">
+            <option>목심</option>
+            <option>등심</option>
+            <option>안심</option>
+            <option>채끝</option>
+            <option>우둔</option>
+            <option>양지</option>
+            <option>갈비</option>
+            <option>앞다리</option>
+        </select>
+        <h3 id="meat"></h3>
+    </fieldset>
+    <fieldset>
+        <legend>시간</legend>
+        <input type="button" value="시간" onclick="getDat()">
+        <h3 id="time"></h3>
+        <h3 id="date"></h3>
+    </fieldset>
+    <fieldset>
+        <input type="text" id="key1" onkeydown="keyud('down')" onkeyup="keyud('up')">
+        <h3 id="typing"></h3>
+    </fieldset>
+</body>
+
+<script>
+
+    function mouseEvent(evt) {
+        if (evt == "over") {
+            document.getElementById("div1").innerHTML = "mouse" + evt;
+            //document = 문서내에
+            //getElementById = 속성값이 div1인 
+        }
+        if (evt == "out") {
+            document.getElementById("div1").innerHTML = "mouse" + evt;
+        }
+    }
+
+    //fieldset 안에 onclick를 사용하여 
+    //오늘 날짜와 시간을 출력하는 함수를 만들기
+
+    function getDat() {
+        var time = new Date();
+        var time1 = time.getHours();
+        var time2 = time.getMinutes();
+        var date = time.getDate();
+        var month = time.getMonth() + 1;
+        document.getElementById("time").innerHTML = time1 + "시" + time2 + "분";
+        document.getElementById("date").innerHTML = month + "월" + date + "일";
+
+    }
+    function keyud(ud) {
+        if (ud == "down") {
+            document.getElementById("typing").innerHTML = "key down"
+        }
+        if (ud == "up") {
+            document.getElementById("typing").innerHTML = "key up"
+        }
+        var msg = document.getElementById("key1").value;
+        document.getElementById("typing").innerHTML = msg;
+    }
+    function sel() {
+       var meat = document.getElementById("sele").value; 
+       document.getElementById("meat").innerHTML = meat;
+    }
+
+</script>
+
+</html>

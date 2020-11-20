@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>실습</title>
+</head>
+
+<body onload="setTime()">
+    <h2 id="msg"></h2>
+    
+</body>
+
+<script>
+    var myTime;
+    var x = 0;
+    var y = 5;
+    function interval1() {
+
+        myTime = setInterval(function () {
+            y--;
+            msg.innerHTML = y + "초뒤에 이동"
+
+        }, 1000)
+    }
+    function setTime() {
+        interval1();
+        setTimeout(function () {
+            alert("페이지가 이동됩니다.");
+            location.href = "http://www.naver.com";
+        }, 5000)
+    }
+
+//     function interval2() {
+
+// myTime = setInterval(function () {
+//     y--;
+//     msg2.innerHTML = y + "초뒤에 이동"
+
+// }, 1000)
+// }
+
+</script>
+
+</html>

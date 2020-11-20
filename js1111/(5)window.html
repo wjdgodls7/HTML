@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>window</title>
+</head>
+
+<body>
+    <button>창열기</button>
+    <button>창닫기</button>
+    <button>창크기 변경</button>
+</body>
+
+<script>
+    var btn = document.getElementsByTagName("button");
+    var mywindow;
+    btn[0].addEventListener("click", winOpen);
+    btn[1].addEventListener("click", winClose);
+    btn[2].addEventListener("click", winResize);
+
+    function winOpen() {
+        mywindow = window.open("(6)screen.html", "myWindow", "width=200, height=200, top =900,left = 100");
+        // window.open("URL","TITLE","OPTION")
+    }
+    function winClose() {
+        mywindow.close();
+    }
+    function winResize() {
+        // mywindow.resizeTo(500,500);
+        //크기를 500x500으로 고정
+
+        mywindow.resizeBy(100, 100);
+        mywindow.focus();
+    }
+
+</script>
+
+</html>

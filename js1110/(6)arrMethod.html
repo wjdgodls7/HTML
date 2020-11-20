@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>배열 함수들</title>
+    <style>
+        button {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <hr />
+    <button onclick="joinEX()">Join</button>
+    <button onclick="joinEX2()">Join2</button>
+    <button onclick="delEX()">Del</button>
+    <button onclick="spliceDel()">Splice</button>
+    <button onclick="spliceAdd()">SpliceAdd</button>
+    <hr />
+    <button onclick="splitEx()">split</button>
+    <hr />
+    <button onclick="sliceEx()">slice</button>
+    <button onclick="concatEX()">concat</button>
+    <hr />
+    <button onclick="sortEx()">sort</button>
+    <button onclick="reverseEx()">reversesort</button>
+    <button onclick="numSort()">NumSort</button>
+    <button onclick="reverseNum()">ReversNum</button>
+</body>
+<script>
+    //합치기
+    function joinEX() {
+        var arrJoin = ["A", "B", "C", "D", "E"];
+        var arrJoin1 = arrJoin.join("@@@@");
+        console.log(arrJoin1);
+
+    }
+    function joinEX2() {
+        var text5 = splitEx().join("+");
+        console.log(text5);
+    }
+    var array = ["마", "가", "나", "다", "라"];
+    console.log(array);
+    //삭제하기
+    function delEX() {
+        //배열 index의 내용만 삭제 시킴
+        delete array[2];
+        console.log("arry[2] 삭제");
+        console.log(array);
+    }
+    //자르기
+    function spliceDel() {
+        // ArrName.splice(i,n);
+        //i번 인덱스부터 n개 삭제
+        array.splice(2, 2);
+        console.log(array);
+    }
+    //자르고 추가하기
+    function spliceAdd() {
+        // ArrName.splice(i,n,m1,m2);
+        // i번 인덱스부터 n개 삭제하고 m개 대체
+        array.splice(1, 0, "뿜", "뿌", "뿡");
+        console.log(array);
+    }
+
+    var text3 = "머리부터 발끝까지 오로나민씨";
+    var text4 = "010-6495-4216";
+    //기준으로 자르기
+    function splitEx() {
+        //splite : 주어진 것을 기준으로 잘라 배열에 담는다.
+        words1 = [];
+        words2 = [];
+        var words1 = text3.split(" ");
+        console.log(words1);
+        var words2 = text4.split("-");
+        console.log(words2);
+
+        for (var i in words1) {
+            console.log("[" + i + "]" + words1[i]);
+        }
+        for (var i in words2) {
+            console.log("[" + i + "]" + words2[i]);
+        }
+        return words1;
+    }
+    //정렬
+    function sortEx() {
+        array.sort();
+        console.log(array);
+    }
+    //뒤집기
+    function reverseEx() {
+        array.sort().reverse();
+        console.log(array);
+    }
+    var arr1 = [1, 2, 3, 4, 5];
+    var arr2 = ['a', 'b', 'c', 'd', 'e'];
+    //''안에는 문자 하나 ""안에는 문자열이 들어감
+
+    //배열 나누기
+    function sliceEx() {
+        var newArr1 = arr1.slice(1, 4);
+        var newArr2 = arr2.slice(2, 5);
+        console.log(newArr1);
+        console.log(newArr2);
+        //ArrName.slice(i,j);
+        // 인덱스 i번째 부터 보여주고
+        // 인덱스 j번째 부터 안보여줌
+    }
+    //배열 합치기
+    function concatEX() {
+        var newArr = arr1.concat(array, arr2);
+        console.log(newArr);
+    }
+    //숫자 정렬
+    var num = [651, 516, 6, 789879, 645, 132, 321, 4];
+    function numSort() {
+        num.sort(function (a, b) { return a - b });
+        console.log(num);
+        /*
+        function(a,b){
+            return a-b;
+            }
+            (1)return 값이 0보다 작을 경우
+            (2)a를 b보다 작은 색인으로 정렬
+            (3)a를 먼저 출력
+            (4)return 값이 0일경우 순서 변경 x
+            (5)return 값이 0보다 클경우 a와 b를 바꿈
+        */
+    }
+    function reverseNum() {
+        num.sort(function (a, b) { return b - a });
+        console.log(num);
+    }
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>회원가입</title>
+</head>
+
+<body>
+    <h2>회원가입</h2>
+    <form action="http://www.daum.net" method="POST">
+        아이디 : <input type="text" name="userid" placeholder="아이디입력"><br />
+        비밀번호 : <input type="password" name="userPwd" id="userPwd"><br />
+        비밀번호 확인 : <input type="password" name="check" onkeyup="check1()" id="check"><br />
+        
+        <h3 id="msg"></h3>
+
+        이름 : <input type="text" name="username"><br />
+        전화번호 : <input type="text" placeholder="-제외하고 입력해주세요" name=username><br />
+        주소 : <input type="text" name="useradd"><br />
+        생년월일 : <input type="date" name="userdate"><br />
+        남성<input type="radio" name="gender"> 여성<input type="radio" name="gender"><br />
+        취미 : Java<input type="checkbox" name="hobby">
+        DB<input type="checkbox" name="hobby">
+        HTML<input type="checkbox" name="hobby"><br/>
+        E-Mail <input type="email" name="useremail"><br/>
+        <input type="submit" value="회원가입">
+    </form>
+
+</body>
+
+<script>
+    var pw1 = document.getElementById("userPwd");
+    var pw2 = document.getElementById("check");
+    var msg = document.getElementById("msg");
+
+    function submit() { }
+
+    function check1() {
+        console.log(pw1.value);
+        console.log(pw2.value);
+        if (pw1.value == pw2.value) {
+            msg.innerHTML = "같습니다.";
+        }else {
+            msg.innerHTML = "다릅니다.";
+        }
+    }
+</script>
+
+</html>

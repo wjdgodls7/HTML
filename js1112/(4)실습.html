@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="msg">글자 색상이 변경 된다.</h1>
+    <button id="btn">색상 변경</button>
+</body>
+<script>
+    var aa = document.getElementById("msg");
+    var bb = document.getElementById("btn");
+
+    var fColor = ["red", "orange", "yellow", "green", "blue", "navy", "puple"];
+    var i = -1;
+
+    // bb.addEventListener("click", setInterval1);
+
+    // function setInterval1() {
+    //     setInterval(function () {
+    //         i++;
+    //         msg.style.color = fColor[i];
+    //         if (i == fColor.length - 1) {
+    //             i = -1;
+    //         }
+    //     }, 1000)
+    // }
+
+    bb.addEventListener("click", function () {
+        setInterval(function () {
+            i++;
+            msg.style.color = fColor[i];
+            if (i == fColor.length - 1) {
+                i = -1;
+            }
+        }, 1000)
+    }
+    )
+
+
+</script>
+</html>

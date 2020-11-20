@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS_position</title>
+    <style>
+        #div1{
+            width: 350px;
+            height: 350px;
+            border: 2px black solid;
+        }
+        #div1 div{  /*div1인 녀석 안에 div들에게 스타일을 줄때 */
+            border: 1px red solid;
+            padding: 10px;
+            background-color: silver;
+        }
+        #box1{
+            position: static;
+            /* 원점에서만 시작함 그러므로 위치설정을 못함 */
+            top: 20px;
+            left: 20px;
+        }
+        #box2{
+            position: relative;
+            /* 이전 영역에서 끝나는 위치 기준으로 함 */
+            top: 20px;
+            left: 20px;
+        }
+        #box3{
+            position: absolute;
+            /* 원점으로부터 위치를 지정할 수 있다. */
+            /* 컨텐츠 크기만큼 영역을 가짐 */
+            top: 20px;
+            left: 20px;
+        }
+        #box4{
+            position: fixed;
+            /* 컨텐츠 크기만큼 영역을 가짐 */
+            /* 스크롤과 상관없이 고정된 좌표에 위치함 */
+            bottom: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="box1">box</div>
+        <div id="box2">box</div>
+        <div id="box3">box</div>
+        <div id="box4">box</div>
+    </div>
+</body>
+</html>

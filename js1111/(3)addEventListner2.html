@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>addEventListner2_mouse Position</title>
+    <style>
+        div{
+            width : 250px;
+            height: 250px;
+            line-height: 250px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="eventZone"></div>
+    <h2>mouse position : <span id="pos"></span></h2>
+    <h2>mouse position : <span id="pos1"></span></h2>
+</body>
+<script>
+    var mousezone = document.getElementById("eventZone");
+    
+    mousezone.addEventListener("click",click1);
+    mousezone.addEventListener("dblclick",dbclick1);
+    mousezone.addEventListener("mouseenter", mouseenter);
+    mousezone.addEventListener("mouseout", mouseout);
+    mousezone.addEventListener("contextmenu", cont);
+  
+    function click1(){
+        mousezone.innerHTML = "click!";
+        mousezone.style.backgroundColor = "orange";
+    }
+
+    function dbclick1(){
+        mousezone.innerHTML = "dblclick!";
+        mousezone.style.backgroundColor = "blue";
+    }
+
+    function mouseenter(){
+        mousezone.innerHTML = "mouseenter";
+        mousezone.style.backgroundColor = "red";
+    }
+
+    function mouseout(){
+        mousezone.innerHTML = "mouseout";
+        mousezone.style.backgroundColor = "yellow";
+    }
+
+    function cont(){
+        alert("우클릭 금지");
+    }
+
+    document.addEventListener("mousemove",mousemove);
+    function mousemove(move){
+        document.getElementById("pos").innerHTML = "브라우저(client) X : "+move.clientX+" /Y : " + move.clientY;
+        document.getElementById("pos1").innerHTML = "모니터(screen) X :" + move.screenX + " /Y : " + move.screenY;
+    }
+</script>
+</html>

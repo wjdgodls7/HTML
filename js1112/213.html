@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>당신이 입력한 값 : <span id="id1"></span></h1>
+    <input type="text" id="text1" onkeyup="keyud('up')"><span id="span1">(0자 입력)</span>
+</body>
+
+<script>
+   
+    function keyud() {
+        msg = document.getElementById("text1").value;
+        msg3 = msg.length;
+        var msg2 = document.getElementById("span1");
+                    
+        if (msg.length >= 10) {
+            msg2.style.color = "red";
+            msg = msg.slice(0, 10);
+                       
+            document.getElementById("span1").innerHTML = "("+msg3+"자 입력)";
+            document.getElementById("text1").value = msg;
+            alert("10자임");
+             
+        }
+        else if(msg.length <= 4){
+            msg2.style.color = "black";
+            document.getElementById("span1").innerHTML = "("+msg3+"자 입력)";
+        }else{
+            msg2.style.color = "orange";
+            document.getElementById("span1").innerHTML = "("+msg3+"자 입력)";
+            
+        }
+        
+        document.getElementById("id1").innerHTML = msg;
+    }
+</script>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <fieldset>
+        <legend>
+            은행계좌관리
+        </legend>
+        <input type="text" id="balance" placeholder="금액을 입력하세요"><br/>
+        <input type="button" value="입금" onclick="Account.deposit()">
+        <input type="button" value="출금" onclick="Account.withdraw()">
+        <input type="button" value="잔액조회" onclick="Account.balance1()">
+        <h2><span id="span1"></span></h2>
+    </fieldset>
+    <link rel="stylesheet" href="css.css" type="text/css">
+</head>
+
+<body>
+</body>
+<script>
+
+    function input() {
+        balance1 = parseInt(document.getElementById("balance").value);
+        document.getElementById("balance").value="";
+        document.getElementById("balance").focus();
+    }
+    var Account = {};
+    Account.balance = 0;
+
+    Account.deposit = function () {
+        input();
+        if(!balance1){alert("다시입력해주세요")}
+        else{this.balance += balance1;
+
+        document.getElementById("span1").innerHTML = balance1 + "원을 입금하였습니다." + "<br/>" + "잔액은" + this.balance + "입니다";
+        }
+    }
+    Account.withdraw = function () {
+        input();
+        if (this.balance >= balance1) {
+            this.balance -= balance1;
+            document.getElementById("span1").innerHTML = balance1 + "원을 출금하였습니다." + "<br/>" + "잔액은" + this.balance + "입니다";
+        } else { alert("다시입력해주세요")}
+
+    }
+    Account.balance1 = function () {
+        document.getElementById("span1").innerHTML = this.balance + "원";
+    }
+
+    // var Account = {};
+    // Account.balance = 0;
+
+    // Account.deposit = function () {
+    //     amount = parseInt(document.getElementById("balance").value);
+    //     this.balance += amount;
+    //     document.getElementById("span1").innerHTML = this.balance;
+    
+    // }
+
+    // Account.withdraw = function () {
+    //     amount = parseInt(document.getElementById("balance").value);
+    //     if (this.balance >= amount) {
+    //         this.balance -= amount;
+    //         document.getElementById("span1").innerHTML = this.balance;
+    //     }
+    //     else {
+    //         alert("잔액이 부족합니다.");
+    //     }
+
+    // }
+
+    // Account.toString = function () {
+    //     return "balance : " + this.balance;
+    // }
+
+</script>
+
+
+</html>

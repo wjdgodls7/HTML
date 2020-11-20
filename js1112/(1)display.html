@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS_display</title>
+    <style>
+        div {
+            border: 1px black solid;
+        }
+
+        #div1 {
+            border: 1px red solid;
+            display: none;
+            /*해당 영역을 사라지게함*/
+        }
+
+        #div2 {
+            border: 1px orange solid;
+            display: inline;
+            /* 줄바꿈이 일어나지 않는다. */
+            /* margin top,bottom이 적용 안됨 */
+            /* width, height가 적용되지 않고 컨텐츠 크기만큼만 적용된다. */
+            margin-top: 100px;
+            margin-bottom: 100px;
+            width: 100px;
+            height: 100px;
+        }
+
+        #div3 {
+            border: 1px yellow solid;
+            display: block;
+            /* inline과는 다르게 다른것들이 다 적용된다. */
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 100px;
+            height: 100px;
+        }
+
+        #div4 {
+            border: 1px green solid;
+            display: inline-block;
+            /* inline과 block의 속성을 반반씩 가지고 있음 */
+            /* 추가할시 줄바꿈이 안일어나고 옆으로 붙음 */
+
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 100px;
+            height: 100px;
+        }
+
+        #div0 {
+            visibility: hidden;
+            /* 화면에서만 보이지 않고 영역은 가지고 있음 */
+            margin-top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>div</div>
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+    <div id="div0">div0</div>
+    <div id="div3">div3</div>
+    <div id="div4">div4</div>
+</body>
+
+
+</html>

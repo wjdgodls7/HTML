@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object2_Bank</title>
+</head>
+<body>
+</body>
+<script>
+    // object 생성
+    var Account = {};
+    // 필드
+    Account.balance = 0;
+    // 메서드
+    // function method(parm){};
+    Account.deposit = function (amount) { //예금
+        this.balance += amount; //Account.balance 이지만 this.balance도 가능함
+    }
+    Account.withdraw = function (amount) { //출금
+        if (this.balance >= amount) {
+            this.balance -= amount;
+        }
+        else {
+            console.log("잔액이 부족합니다.");
+        }
+    }
+    Account.toString = function(balance){
+        return "balance : " + this.balance;
+    }
+    //Object 사용
+    Account.balance = 50000;
+    // 10000원 입금
+    Account.deposit(10000);
+    // Q1. toSting을 사용해서 잔액 조회
+    console.log(Account.toString());
+    // Q2. 10만원을 출금하기
+    Account.withdraw(100000);
+    // Q3. 3만원을 출금하기
+    Account.withdraw(30000);
+    // Q4. 잔액조회 하기
+    console.log(Account.toString());
+</script>
+</html>
